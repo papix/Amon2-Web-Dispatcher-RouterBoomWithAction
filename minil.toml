@@ -1,0 +1,6 @@
+name = "Amon2-Web-Dispatch-RouterBoomWithChain"
+# badges = ["travis"]
+authority="cpan:PAPIX"
+
+module_maker="ModuleBuildTiny"
+
