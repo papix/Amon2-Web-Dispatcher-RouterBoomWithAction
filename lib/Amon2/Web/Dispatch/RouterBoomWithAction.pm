@@ -12,22 +12,14 @@ sub import {
     my $caller = caller(0);
 
     my $router = Router::Boom::Method->new();
+    my $response_class = 'Amon2::Web::Response';
     my $base;
 
     no strict 'refs';
 
+    *{"${caller}::response"} = sub { $response_class = $_[0] };
     *{"${caller}::base"} = sub { $base = $_[0] };
 
-    # functions
-    #
-    # get( '/path', 'Controller#action')
-    # post('/path', 'Controller#action')
-    # delete_('/path', 'Controller#action')
-    # any( '/path', 'Controller#action')
-    # get( '/path', sub { })
-    # post('/path', sub { })
-    # delete_('/path', sub { })
-    # any( '/path', sub { })
     for my $method (qw(get post delete_ any)) {
         *{"${caller}::${method}"} = sub {
             my ($path, @dests) = @_;
@@ -86,7 +78,9 @@ sub import {
                     for (@{ $dest->{before_dispatch} }) {
                         my $method = $_->{method};
                         $c->{args} = $captured;
-                        $_->{class}->$method($c, $captured);
+                        my $response = $_->{class}->$method($c, $captured);
+
+                        return $response if defined $response && ref $response eq $response_class;
                     }
                 }
 
@@ -103,7 +97,8 @@ sub import {
                     for (@{ $dest->{after_dispatch} }) {
                         my $method = $_->{method};
                         $c->{args} = $captured;
-                        $response = $_->{class}->$method($c, $response);
+                        my $r = $_->{class}->$method($c, $response);
+                        $response = $r if defined $r && ref $r eq $response_class;
                     }
                 }
 
