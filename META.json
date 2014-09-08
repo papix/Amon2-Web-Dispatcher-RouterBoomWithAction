@@ -1,10 +1,10 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Amon2 + Router::Boom + (Before|After) actions",
    "author" : [
       "papix <mail@papix.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.1.0, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Minilla/v2.1.1, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "perl_5"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Amon2-Web-Dispatch-RouterBoomWithChain",
+   "name" : "Amon2-Web-Dispatch-RouterBoomWithAction",
    "no_index" : {
       "directory" : [
          "t",
@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/papix/Amon2-Web-Dispatch-RouterBoomWithChain/issues"
+      },
+      "homepage" : "https://github.com/papix/Amon2-Web-Dispatch-RouterBoomWithChain",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/papix/Amon2-Web-Dispatch-RouterBoomWithChain.git",
+         "web" : "https://github.com/papix/Amon2-Web-Dispatch-RouterBoomWithChain"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:PAPIX"
 }

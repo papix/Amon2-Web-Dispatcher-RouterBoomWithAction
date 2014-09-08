@@ -1,14 +1,45 @@
 # NAME
 
-Amon2::Web::Dispatch::RouterBoomWithChain - It's new $module
+Amon2::Web::Dispatch::RouterBoomWithAction - Amon2 + Router::Boom + (Before|After) actions
 
 # SYNOPSIS
 
-    use Amon2::Web::Dispatch::RouterBoomWithChain;
+    # MyApp::Web::Dispatcher
+    use Amon2::Web::Dispatch::RouterBoomWithAction;
+    use Module::Find qw/ useall /;
+
+    useall('MyApp::Web::C');
+    base('MyApp::Web::C');
+
+    get '/' => [ 'Before#action1', 'Before#action2' ] => 'Root#index' => [ 'After#action1', 'After#action2' ];
+
+    # MyApp::Web::C::Before
+    sub action1 {
+        my ($class, $c) = @_;
+        ...
+    }
+
+    sub action2 {
+        my ($class, $c) = @_;
+        ...
+    }
+
+    # MyApp::Web::C::After
+    sub action1 {
+        my ($class, $c, $response) = @_;
+        ...
+        return $response;
+    }
+
+    sub action2 {
+        my ($class, $c, $response) = @_;
+        ...
+        return $response;
+    }
 
 # DESCRIPTION
 
-Amon2::Web::Dispatch::RouterBoomWithChain is ...
+Amon2::Web::Dispatch::RouterBoomWithAction provide mechanism of before/acter action to Amon2's dispatcher.
 
 # LICENSE
 
