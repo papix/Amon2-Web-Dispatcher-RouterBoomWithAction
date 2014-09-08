@@ -1,4 +1,4 @@
-package Amon2::Web::Dispatch::RouterBoomWithChain;
+package Amon2::Web::Dispatch::RouterBoomWithAction;
 use 5.008001;
 use strict;
 use warnings;
