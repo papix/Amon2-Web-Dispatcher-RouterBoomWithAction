@@ -1,11 +1,11 @@
 # NAME
 
-Amon2::Web::Dispatch::RouterBoomWithAction - Amon2 + Router::Boom + (Before|After) actions
+Amon2::Web::Dispatcher::RouterBoomWithAction - Amon2 + Router::Boom + (Before|After) actions
 
 # SYNOPSIS
 
     # MyApp::Web::Dispatcher
-    use Amon2::Web::Dispatch::RouterBoomWithAction;
+    use Amon2::Web::Dispatcher::RouterBoomWithAction;
     use Module::Find qw/ useall /;
 
     useall('MyApp::Web::C');

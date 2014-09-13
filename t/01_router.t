@@ -3,7 +3,7 @@ use warnings;
 use utf8;
 use Test::More 0.98;
 
-use Amon2::Web::Dispatch::RouterBoomWithAction;
+use Amon2::Web::Dispatcher::RouterBoomWithAction;
 use Test::Requires 'Test::WWW::Mechanize::PSGI';
 
 our $ACTION;
@@ -31,7 +31,7 @@ our $ACTION;
 }
 {
     package MyApp::Web::Dispatcher;
-    use Amon2::Web::Dispatch::RouterBoomWithAction;
+    use Amon2::Web::Dispatcher::RouterBoomWithAction;
     base 'MyApp::Web';
 
     get '/1' => 'C#root';

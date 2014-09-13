@@ -1,4 +1,4 @@
-package Amon2::Web::Dispatch::RouterBoomWithAction;
+package Amon2::Web::Dispatcher::RouterBoomWithAction;
 use 5.008001;
 use strict;
 use warnings;
@@ -126,12 +126,12 @@ __END__
 
 =head1 NAME
 
-Amon2::Web::Dispatch::RouterBoomWithAction - Amon2 + Router::Boom + (Before|After) actions
+Amon2::Web::Dispatcher::RouterBoomWithAction - Amon2 + Router::Boom + (Before|After) actions
 
 =head1 SYNOPSIS
 
     # MyApp::Web::Dispatcher
-    use Amon2::Web::Dispatch::RouterBoomWithAction;
+    use Amon2::Web::Dispatcher::RouterBoomWithAction;
     use Module::Find qw/ useall /;
 
     useall('MyApp::Web::C');

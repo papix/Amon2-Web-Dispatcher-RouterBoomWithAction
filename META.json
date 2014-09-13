@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Amon2-Web-Dispatch-RouterBoomWithAction",
+   "name" : "Amon2-Web-Dispatcher-RouterBoomWithAction",
    "no_index" : {
       "directory" : [
          "t",
@@ -42,12 +42,16 @@
       },
       "runtime" : {
          "requires" : {
+            "Amon2" : "0",
+            "Router::Boom" : "0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Requires" : "0",
+            "Test::WWW::Mechanize::PSGI" : "0"
          }
       }
    },
